@@ -1,0 +1,29 @@
+From: noreply@github.com
+To: jamil@example.com
+Subject: [acme-corp/widget-api] Build #147 — failure
+Date: Mon, 19 May 2026 17:58:12 +0000
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+
+<html><body>
+<div style="font-family: sans-serif">
+  <h2>Build #147 — failure (matrix build, 1 of 4 jobs failed)</h2>
+  <table>
+    <tr><td>Repository:</td><td>acme-corp/widget-api</td></tr>
+    <tr><td>Branch:</td><td>main</td></tr>
+    <tr><td>Commit:</td><td>e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4</td></tr>
+    <tr><td>Triggered by:</td><td>alice-dev</td></tr>
+    <tr><td>Duration:</td><td>6m 04s</td></tr>
+    <tr><td>Matrix jobs:</td><td>4</td></tr>
+    <tr><td>Matrix passed:</td><td>3</td></tr>
+    <tr><td>Matrix failed:</td><td>1</td></tr>
+  </table>
+  <h3>Matrix job results</h3>
+  <ul>
+    <li>python-3.10: success</li>
+    <li>python-3.11: success</li>
+    <li>python-3.12: success</li>
+    <li>python-3.13-beta: failure</li>
+  </ul>
+</div>
+</body></html>
