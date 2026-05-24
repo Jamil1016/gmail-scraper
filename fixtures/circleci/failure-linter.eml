@@ -1,0 +1,18 @@
+From: noreply@circleci.com
+To: jamil@example.com
+Subject: Project widget-api: build #1026 [failed]
+Date: Tue, 20 May 2026 11:33:08 +0000
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+
+<html><body>
+<div style="font-family: Helvetica, Arial">
+  <div style="background: #D50000; color: white; padding: 12px">FAILED</div>
+  <h2>Project: widget-api / build #1026</h2>
+  <p>Branch: <b>feature/payments-v2</b></p>
+  <p>Commit: <code>c1d2e3f</code> — bob-eng</p>
+  <p>Duration: 0 minutes 38 seconds</p>
+  <p>Failed step: <b>lint</b></p>
+  <pre>ruff check failed: E501 line too long (147 > 100) at api/handlers.py:42</pre>
+</div>
+</body></html>

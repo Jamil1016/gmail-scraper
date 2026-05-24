@@ -1,0 +1,18 @@
+From: noreply@circleci.com
+To: jamil@example.com
+Subject: Project widget-api: build #1025 [success]
+Date: Tue, 20 May 2026 10:02:51 +0000
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+
+<html><body>
+<div style="font-family: Helvetica, Arial">
+  <div style="background: #00C853; color: white; padding: 12px">SUCCESS</div>
+  <h2>Project: widget-api / build #1025</h2>
+  <p>Branch: <b>feature/payments-v2</b></p>
+  <p>Commit: <code>b7c9d2e</code> — bob-eng</p>
+  <p>Duration: 1 minute 47 seconds</p>
+  <p>Workflow: <b>pr-check</b></p>
+  <p>Pull request: #94</p>
+</div>
+</body></html>

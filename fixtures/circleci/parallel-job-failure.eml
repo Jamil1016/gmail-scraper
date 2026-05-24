@@ -1,0 +1,20 @@
+From: noreply@circleci.com
+To: jamil@example.com
+Subject: Project widget-api: build #1029 [failed]
+Date: Tue, 20 May 2026 13:45:01 +0000
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+
+<html><body>
+<div style="font-family: Helvetica, Arial">
+  <div style="background: #D50000; color: white; padding: 12px">FAILED</div>
+  <h2>Project: widget-api / build #1029</h2>
+  <p>Branch: <b>main</b></p>
+  <p>Commit: <code>e5f6a7b</code> — charlie-ops</p>
+  <p>Duration: 4 minutes 09 seconds</p>
+  <p>Parallel jobs: 8</p>
+  <p>Parallel passed: 7</p>
+  <p>Parallel failed: 1 (job index 3)</p>
+  <p>Failed step (in failed job): <b>integration-tests</b></p>
+</div>
+</body></html>

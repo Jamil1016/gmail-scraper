@@ -1,0 +1,16 @@
+From: noreply@circleci.com
+To: jamil@example.com
+Subject: Project widget-api: build #1028 [cancelled]
+Date: Tue, 20 May 2026 12:31:19 +0000
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+
+<html><body>
+<div style="font-family: Helvetica, Arial">
+  <div style="background: #757575; color: white; padding: 12px">CANCELLED</div>
+  <h2>Project: widget-api / build #1028</h2>
+  <p>Branch: <b>main</b></p>
+  <p>Cancelled by: alice-dev</p>
+  <p>Reason: manual</p>
+</div>
+</body></html>

@@ -1,0 +1,17 @@
+From: noreply@circleci.com
+To: jamil@example.com
+Subject: Project widget-api: build #1024 [success]
+Date: Tue, 20 May 2026 09:14:22 +0000
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+
+<html><body>
+<div style="font-family: Helvetica, Arial">
+  <div style="background: #00C853; color: white; padding: 12px">SUCCESS</div>
+  <h2>Project: widget-api / build #1024</h2>
+  <p>Branch: <b>main</b></p>
+  <p>Commit: <code>a3f8c92</code> — alice-dev</p>
+  <p>Duration: 2 minutes 14 seconds</p>
+  <p>Workflow: <b>deploy</b></p>
+</div>
+</body></html>

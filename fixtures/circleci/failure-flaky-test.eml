@@ -1,0 +1,21 @@
+From: noreply@circleci.com
+To: jamil@example.com
+Subject: Project widget-api: build #1027 [failed]
+Date: Tue, 20 May 2026 12:08:44 +0000
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+
+<html><body>
+<div style="font-family: Helvetica, Arial">
+  <div style="background: #D50000; color: white; padding: 12px">FAILED</div>
+  <h2>Project: widget-api / build #1027</h2>
+  <p>Branch: <b>main</b></p>
+  <p>Commit: <code>d4e5f6a</code> — alice-dev</p>
+  <p>Duration: 3 minutes 22 seconds</p>
+  <p>Failed step: <b>test</b></p>
+  <p>Failed tests: 1</p>
+  <ul>
+    <li>tests/integration/test_payments.py::test_concurrent_charge</li>
+  </ul>
+</div>
+</body></html>
