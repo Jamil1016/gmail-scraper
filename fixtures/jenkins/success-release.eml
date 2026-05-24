@@ -1,0 +1,19 @@
+From: jenkins@build.example.com
+To: jamil@example.com
+Subject: Build #2143 — widget-api/release-v2.4 — SUCCESS
+Date: Wed, 21 May 2026 08:14:22 +0000
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+
+<html><body>
+<pre>
+Project: widget-api
+Build: #2143
+Branch: release-v2.4
+Status: SUCCESS
+Commit: b7c9d2e3
+Triggered: alice-dev (manual)
+Duration: 12 min 04 sec
+Artifacts: widget-api-2.4.0.tar.gz, widget-api-2.4.0.deb
+</pre>
+</body></html>

@@ -1,0 +1,22 @@
+From: jenkins@build.example.com
+To: jamil@example.com
+Subject: Build #2147 — widget-api/main — UNSTABLE
+Date: Wed, 21 May 2026 16:22:09 +0000
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+
+<html><body>
+<pre>
+Project: widget-api
+Build: #2147
+Branch: main
+Status: UNSTABLE
+Commit: f6a7b8c9
+Triggered: alice-dev (manual)
+Duration: 18 min 44 sec
+Stages: 5
+Stages passed: 4
+Stages unstable: 1
+Unstable stage: integration-tests (2 of 47 tests failed but threshold not exceeded)
+</pre>
+</body></html>

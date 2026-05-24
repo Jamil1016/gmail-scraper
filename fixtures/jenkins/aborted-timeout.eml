@@ -1,0 +1,19 @@
+From: jenkins@build.example.com
+To: jamil@example.com
+Subject: Build #2146 — widget-api/feature-x — ABORTED
+Date: Wed, 21 May 2026 14:30:00 +0000
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+
+<html><body>
+<pre>
+Project: widget-api
+Build: #2146
+Branch: feature-x
+Status: ABORTED
+Commit: e5f6a7b8
+Triggered: charlie-ops (manual)
+Duration: 30 min 00 sec
+Aborted by: timeout (exceeded 30-minute limit)
+</pre>
+</body></html>

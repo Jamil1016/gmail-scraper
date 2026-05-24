@@ -1,0 +1,19 @@
+From: jenkins@build.example.com
+To: jamil@example.com
+Subject: Build #2142 — widget-api/main — SUCCESS
+Date: Wed, 21 May 2026 03:00:14 +0000
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+
+<html><body>
+<pre>
+Project: widget-api
+Build: #2142
+Branch: main
+Status: SUCCESS
+Commit: a3f8c92d
+Triggered: Timer (nightly)
+Duration: 7 min 33 sec
+Workspace: /var/jenkins/workspace/widget-api-nightly
+</pre>
+</body></html>

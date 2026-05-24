@@ -1,0 +1,20 @@
+From: jenkins@build.example.com
+To: jamil@example.com
+Subject: Build #2145 — widget-api/main — FAILURE
+Date: Wed, 21 May 2026 11:08:17 +0000
+Content-Type: text/html; charset=utf-8
+MIME-Version: 1.0
+
+<html><body>
+<pre>
+Project: widget-api
+Build: #2145
+Branch: main
+Status: FAILURE
+Commit: d4e5f6a7
+Triggered: alice-dev (manual)
+Duration: 4 min 51 sec
+Failed stage: deploy
+Error: SSH connection to deploy host timed out
+</pre>
+</body></html>
