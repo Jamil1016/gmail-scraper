@@ -44,7 +44,7 @@ addopts = ["-v", "--strict-markers"]
 
 [tool.coverage.run]
 source = ["ci_email_scraper"]
-omit = ["ci_email_scraper/__main__.py"]
+omit = ["ci_email_scraper/__main__.py", "ci_email_scraper/cli.py"]
 
 [tool.coverage.report]
 fail_under = 80
@@ -64,3 +64,7 @@ python_version = "3.12"
 strict = true
 warn_return_any = true
 warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = ["asyncpg.*", "bs4.*", "dotenv.*"]
+ignore_missing_imports = true

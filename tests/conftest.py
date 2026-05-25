@@ -3,11 +3,10 @@ import os
 from collections.abc import AsyncIterator, Iterator
 from pathlib import Path
 
+import asyncpg
 import pytest
 import pytest_asyncio
 from testcontainers.postgres import PostgresContainer
-
-import asyncpg
 
 
 @pytest.fixture(scope="session")

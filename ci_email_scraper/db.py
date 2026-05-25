@@ -108,4 +108,5 @@ async def query_builds(
     """
 
     async with pool.acquire() as conn:
-        return await conn.fetch(sql, *params)
+        rows: list[asyncpg.Record] = await conn.fetch(sql, *params)
+        return rows

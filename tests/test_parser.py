@@ -1,3 +1,4 @@
+import contextlib
 from datetime import UTC, datetime
 from email import policy
 from email.parser import BytesParser
@@ -26,10 +27,9 @@ def _load_fixture(path: Path) -> tuple[str, str, datetime, str]:
     received_at = datetime(2026, 1, 1, tzinfo=UTC)  # default if Date header malformed
     if date_header:
         from email.utils import parsedate_to_datetime
-        try:
+
+        with contextlib.suppress(TypeError, ValueError):
             received_at = parsedate_to_datetime(date_header)
-        except (TypeError, ValueError):
-            pass
     return subject, body_html, received_at, from_addr
 
 

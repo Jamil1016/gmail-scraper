@@ -16,7 +16,7 @@ _SUBJECT_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     # CircleCI: "Project X: build #N [status]"
     ("circleci", re.compile(r"Project\s+\S+:\s+build\s+#\d+", re.IGNORECASE)),
     # Jenkins: "Build #N — project/branch — STATUS"
-    ("jenkins", re.compile(r"Build\s+#\d+\s+[—–-]\s+\S+", re.IGNORECASE)),
+    ("jenkins", re.compile(r"Build\s+#\d+\s+[—–-]\s+\S+", re.IGNORECASE)),  # noqa: RUF001
 ]
 
 # Fallback: From-header domain → vendor

@@ -33,10 +33,11 @@ class TestCLIParser:
 class TestCLISmoke:
     @pytest.mark.asyncio
     async def test_run_command_calls_upsert(self) -> None:
-        with patch("ci_email_scraper.cli.create_pool", new_callable=AsyncMock) as create_pool_mock, \
-             patch("ci_email_scraper.cli.upsert_parsed", new_callable=AsyncMock) as upsert_mock, \
-             patch("ci_email_scraper.cli.load_fixture_dir") as load_mock:
-
+        with (
+            patch("ci_email_scraper.cli.create_pool", new_callable=AsyncMock) as create_pool_mock,
+            patch("ci_email_scraper.cli.upsert_parsed", new_callable=AsyncMock) as upsert_mock,
+            patch("ci_email_scraper.cli.load_fixture_dir") as load_mock,
+        ):
             load_mock.return_value = []
             upsert_mock.return_value = 0
             create_pool_mock.return_value.close = AsyncMock()
@@ -47,9 +48,10 @@ class TestCLISmoke:
 
     @pytest.mark.asyncio
     async def test_query_command_calls_query_builds(self) -> None:
-        with patch("ci_email_scraper.cli.create_pool", new_callable=AsyncMock) as create_pool_mock, \
-             patch("ci_email_scraper.cli.query_builds", new_callable=AsyncMock) as query_mock:
-
+        with (
+            patch("ci_email_scraper.cli.create_pool", new_callable=AsyncMock) as create_pool_mock,
+            patch("ci_email_scraper.cli.query_builds", new_callable=AsyncMock) as query_mock,
+        ):
             query_mock.return_value = []
             create_pool_mock.return_value.close = AsyncMock()
 

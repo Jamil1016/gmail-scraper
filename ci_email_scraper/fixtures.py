@@ -5,6 +5,7 @@ Pure IO + decoding. No parsing. The output (RawEmail) feeds into parse_email.
 
 from __future__ import annotations
 
+import contextlib
 from collections.abc import Iterator
 from datetime import UTC, datetime
 from email import policy
@@ -45,10 +46,8 @@ def _load_eml(path: Path) -> RawEmail:
     received_at: datetime = datetime(2026, 1, 1, tzinfo=UTC)
     date_header = msg["Date"]
     if date_header:
-        try:
+        with contextlib.suppress(TypeError, ValueError):
             received_at = parsedate_to_datetime(date_header)
-        except (TypeError, ValueError):
-            pass
 
     return RawEmail(
         subject=subject,

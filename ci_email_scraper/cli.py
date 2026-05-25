@@ -73,9 +73,7 @@ async def _query(args: argparse.Namespace) -> int:
         print("-" * 65)
         for row in rows:
             received = row["received_at"].isoformat() if row["received_at"] else ""
-            print(
-                f"{row['vendor']:<18} {row['build_id']:<8} {row['status']:<10} {received:<25}"
-            )
+            print(f"{row['vendor']:<18} {row['build_id']:<8} {row['status']:<10} {received:<25}")
         return 0
     finally:
         await pool.close()

@@ -56,6 +56,7 @@ class TestUpsert:
         async with db_pool.acquire() as conn:
             row = await conn.fetchrow("select fields from ci_builds where message_id=$1", "abc123")
         import json
+
         assert row is not None
         assert json.loads(row["fields"]) == {"repo": "acme/widget", "branch": "main"}
 

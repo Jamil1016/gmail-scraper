@@ -1,5 +1,3 @@
-import pytest
-
 from ci_email_scraper.patterns import match_vendor
 
 

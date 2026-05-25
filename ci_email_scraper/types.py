@@ -12,10 +12,10 @@ class ParsedEmail(TypedDict):
     fixed schema — this is what lands in the Postgres JSONB column.
     """
 
-    vendor: str          # "github_actions" | "circleci" | "jenkins" | "unknown"
-    message_id: str      # stable hash for dedup
-    build_id: str        # "" if vendor == "unknown"
-    status: str          # "success" | "failure" | "cancelled" | "unknown"
+    vendor: str  # "github_actions" | "circleci" | "jenkins" | "unknown"
+    message_id: str  # stable hash for dedup
+    build_id: str  # "" if vendor == "unknown"
+    status: str  # "success" | "failure" | "cancelled" | "unknown"
     received_at: datetime
     fields: dict[str, Any]
 

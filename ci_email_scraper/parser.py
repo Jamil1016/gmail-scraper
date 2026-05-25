@@ -43,6 +43,7 @@ def _stable_id(subject: str, build_id: str, received_at: datetime) -> str:
 
 # --- Vendor extractors ---
 
+
 def _extract_after_label(text: str, label: str) -> str:
     """Pull the substring immediately after 'Label:' up to the next two-space gap.
 
@@ -68,7 +69,7 @@ def _parse_duration_to_seconds(s: str) -> int | None:
 def _parse_github_actions(subject: str, text: str) -> dict[str, Any]:
     # Subject: "[owner/repo] Build #N — status"
     m = re.search(
-        r"\[([\w.-]+/[\w.-]+)\]\s+Build\s+#(\d+)\s+[—–-]\s+(\w+)",
+        r"\[([\w.-]+/[\w.-]+)\]\s+Build\s+#(\d+)\s+[—–-]\s+(\w+)",  # noqa: RUF001
         subject,
     )
     if not m:
@@ -153,7 +154,7 @@ def _parse_circleci(subject: str, text: str) -> dict[str, Any]:
 def _parse_jenkins(subject: str, text: str) -> dict[str, Any]:
     # Subject: "Build #N — project/branch — STATUS"
     m = re.search(
-        r"Build\s+#(\d+)\s+[—–-]\s+(\S+)\s+[—–-]\s+(\w+)",
+        r"Build\s+#(\d+)\s+[—–-]\s+(\S+)\s+[—–-]\s+(\w+)",  # noqa: RUF001
         subject,
     )
     if not m:
