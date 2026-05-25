@@ -23,7 +23,7 @@ dev = [
 ]
 
 [project.scripts]
-ci-email-scraper = "ci_email_scraper.cli:main"
+ci-email-scraper = "ci_email_scraper.cli:cli_entry"
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
