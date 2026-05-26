@@ -1,20 +1,72 @@
-# gmail-scraper
+# ci-email-scraper
 
-Open-source reference implementation of the **Gmail document parsing** pattern.
+![Tests](https://github.com/Jamil1016/gmail-scraper/actions/workflows/test.yml/badge.svg)
+![Lint](https://github.com/Jamil1016/gmail-scraper/actions/workflows/lint.yml/badge.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-The production version of this system runs privately at my employer at the scale described on the portfolio case study:
-https://jamilmendez.dev/projects/gmail-scraper
+Open-source reference implementation of the "HTML email → JSONB" pattern, using synthetic CI/CD build notifications (GitHub Actions, CircleCI, Jenkins) as the demo domain.
 
-This repository will contain a **clean-room implementation** on synthetic data, designed for public consumption — same architecture, same techniques, my IP.
+## The Pattern
 
-**ETA:** Week W3 of the AI Engineer learning path
+CI/CD platforms email a build summary on every job. These emails are searchable in your inbox but useless once you want trends, cross-repo views, or programmatic analysis. This repo demonstrates the parser pattern that turns those emails into queryable structured data — without committing to a fixed schema that breaks every time the email format changes.
 
-## Why a separate repo
+The same pattern, against real Gmail at production scale, runs in a private repo at my employer. This is a clean-room implementation against synthetic CI/CD emails so the architecture is verifiable.
 
-- The work code is my employer's IP and stays private
-- This repo is written on personal time against synthetic data — same patterns, distinct codebase
-- The case study explains what the system does and the decisions behind it
+## Architecture
 
-## Status
+```mermaid
+graph LR
+  F[fixtures/*.eml] --> P[parser.parse_email]
+  P --> H[patterns.match_vendor]
+  H --> E[Vendor extractor<br/>GHA / CircleCI / Jenkins]
+  E --> D[db.upsert_parsed]
+  D --> PG[(Postgres<br/>ci_builds.fields JSONB)]
+  PG --> Q[cli.query]
+```
 
-🚧 Placeholder. Real code lands on the ETA above.
+Three core moves:
+1. **Ordered header patterns** identify the CI vendor from subject + From-header. Longer/more-specific patterns are checked first to avoid prefix collisions.
+2. **Hidden-span removal + word-rejoin** cleans up tracking pixel spans that `BeautifulSoup.get_text()` would otherwise split words across.
+3. **Dynamic JSONB column** absorbs vendor-specific fields without schema migration.
+
+## Quick Start
+
+```bash
+git clone https://github.com/Jamil1016/gmail-scraper
+cd gmail-scraper
+docker compose up -d
+pip install -e .
+cp .env.example .env  # default DATABASE_URL works with docker-compose
+python -m ci_email_scraper init-db
+python -m ci_email_scraper run
+python -m ci_email_scraper query --status failure
+```
+
+## How It Works
+
+See `ci_email_scraper/parser.py` for the parser core, `patterns.py` for vendor detection, `db.py` for the asyncpg-based upsert layer.
+
+## Tests
+
+```bash
+pytest                              # all tests
+SKIP_INTEGRATION_TESTS=1 pytest     # unit only (no Postgres container needed)
+pytest --cov                        # with coverage
+```
+
+| Test file | Covers |
+|---|---|
+| `test_patterns.py` | Vendor detection + prefix disambiguation |
+| `test_dirty_html.py` | Hidden-span removal + word rejoin |
+| `test_parser.py` | Full per-vendor parse against fixtures |
+| `test_upsert.py` | Idempotency + JSONB round-trip (testcontainers) |
+| `test_cli.py` | CLI argument parsing + command dispatch |
+
+## Background
+
+I built this pattern at scale at $WORK (private repo). The case study with production metrics is at:
+**https://portfolio-gules-gamma-14.vercel.app/projects/gmail-scraper**
+
+## License
+
+MIT
