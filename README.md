@@ -65,7 +65,7 @@ pytest --cov                        # with coverage
 ## Background
 
 I built this pattern at scale at $WORK (private repo). The case study with production metrics is at:
-**https://portfolio-gules-gamma-14.vercel.app/projects/gmail-scraper**
+**https://jamil-mendez.vercel.app/projects/gmail-scraper**
 
 ## License
 
